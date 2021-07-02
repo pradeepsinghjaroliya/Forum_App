@@ -1,0 +1,10 @@
+.comments_button{
+    color: #3ca4ff;
+    background:none;
+    border:0;
+    cursor: pointer;
+    padding:0;
+}
+.comments_button :hover{
+    color: #1c84df;
+}

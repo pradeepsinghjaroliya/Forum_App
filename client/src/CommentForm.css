@@ -1,0 +1,16 @@
+.Commentform_textarea{
+    background:none;
+  border: 1px solid #777;
+  border-radius: 3px;
+  display: block;
+  width:100%;
+  box-sizing: border-box;
+  padding: 8px;
+  line-height: 1.3rem;
+  margin-bottom: 20px;
+  color:black;
+  font-family: inherit;
+}
+.Commentform_btns{
+    text-align: right;
+}

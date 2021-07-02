@@ -1,0 +1,10 @@
+.Comment_box{
+    display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 10px 0;
+      font-size: .8rem;
+      line-height: 1.0rem;
+      color:#ddd;
+}

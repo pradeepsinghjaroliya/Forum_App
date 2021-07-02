@@ -1,0 +1,38 @@
+.QuestionStat{
+    text-align: center;
+  display: inline-block;
+  font-size: 1.2rem;
+  color:#aaa;
+  margin-top:7px;
+} 
+.QuestionStat > span{
+    font-size:.7rem;
+    display: block;
+    font-weight: 300;
+    margin-top: 4px;
+}
+.QuestionTitleArea{
+    padding: 0 30px;
+}
+.QuestionLink{
+    text-decoration: none;
+  color:#3ca4ff;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.StyledQuestionRow{
+    background-color: rgba(255,255,255,.05);
+  padding: 15px 15px 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 50px) 1fr;
+  border-top: 1px solid #555;
+}
+.WhoAndWhen{
+    display: inline-block;
+    color:#aaa;
+    font-size: .8rem;
+    display: flex;
+    align-content:flex-end;
+    padding: 10px 0;
+}

@@ -1,0 +1,38 @@
+.header_container{
+    background-color: #393939;
+    box-shadow: 0 3px 3px rgba(0,0,0,.2);
+    display:grid;
+    grid-template-columns: 1fr 200px;
+    grid-column-gap: 20px;
+}
+.LogoLink{
+  color:white;
+  text-decoration: none;
+  display: inline-block;
+  height: 50px;
+  line-height: 30px;
+  padding: 0px 15px;
+}
+.LogoLink > svg{
+    margin-top: 7px;
+    display: inline-block;
+}
+.LogoLink > span{
+    display: inline-block;
+    padding-left:5px;
+    padding-top: 10px;
+    font-size:1.2rem;
+    font-weight: 300;
+}
+.LogoLink > b{
+    font-weight: normal;
+    display: inline-block;
+    margin-left:2px;
+}
+.profile_link{
+    color:white;
+    padding: 0 20px;
+    text-decoration: none;
+    line-height: 50px;
+    text-align: right;
+}
