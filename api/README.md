@@ -1,7 +1,10 @@
 # Forum_app
 Sql querries for creating database (edit the rest of the details like username and password in db.js)
+
 --create database forum_db;
---use forum_db
+
+--use forum_db;
+
 
 Now for adding the tables:-
 
