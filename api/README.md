@@ -46,6 +46,7 @@ CREATE TABLE votes (
     user_id int null,
     PRIMARY KEY(id) 
 );
+
 CREATE table user_tags(
     user_id int null,
     tag_id int null
