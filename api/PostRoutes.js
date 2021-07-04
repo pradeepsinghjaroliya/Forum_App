@@ -11,9 +11,11 @@ PostRoutes.get("/posts/:type/:postIds", (req, res) => {
 	const token = req.cookies.token;
 	getLoggedInUser(token).then((user) => {
 		getPostChildren(postIds, type, user.id).then((comments) => {
-      console.log(comments);
 			res.json(comments).send();
-		}).catch(console.log);
+		}).catch(e =>{
+			console.log("error...");
+			console.log(e);
+		  });
 	});
 });
 

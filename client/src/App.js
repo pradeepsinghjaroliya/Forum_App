@@ -44,7 +44,6 @@ function App() {
     let newUserInfo = user;
     for (let key in userProps) {
       newUserInfo[key] = userProps[key];
-      console.log(key, userProps[key], newUserInfo);
     }
     setUser(newUserInfo);
   }

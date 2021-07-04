@@ -45,6 +45,7 @@ UserRoutes.post('/login', ((req, res) => {
     })
     .catch(e => {
       res.status(422).send('something went wrong. Sorry');
+      console.log("error...");
       console.log(e);
     });
 
@@ -77,6 +78,7 @@ UserRoutes.post('/register', ((req, res) => {
             });
           })
           .catch(e => {
+            console.log("error...");
             console.log(e);
             res.status(422).send('User creation failed');
           });
@@ -85,6 +87,7 @@ UserRoutes.post('/register', ((req, res) => {
       }
     })
     .catch(e => {
+      console.log("error...");
       console.log(e);
       res.status(422).send(e);
     });

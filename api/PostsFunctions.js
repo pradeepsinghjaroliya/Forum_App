@@ -6,7 +6,6 @@ export function getPostChildren(postIds, type, userId = null) {
   }
   if (type.substr(type.length-1, 1) === 's' ) {
     type = type.substr(0, type.length-1);
-    console.log(type + "type");
   }
   return db.select(
     'posts.*',

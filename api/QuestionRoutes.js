@@ -8,7 +8,6 @@ QuestionRoutes.post("/questions", (req, res) => {
 	const { title, content } = req.body;
 	const tagIds = req.body.tags;
 	const { token } = req.cookies;
-  console.log(req.body);
 	db.select("id")
 		.from("users")
 		.where({ token })
@@ -24,17 +23,23 @@ QuestionRoutes.post("/questions", (req, res) => {
 					})
 					.then((questionId) => {
 						const questionTags = [];
-            console.log(questionId);
-            console.log(tagIds);
+
 						tagIds.forEach((tagId) => {
 							questionTags.push({ question_id: questionId, tag_id: tagId });
 						});
+						console.log("post data:-");
+						console.log(questionTags);
 						db("question_tags")
 							.insert(questionTags)
-							.then(() => res.json(questionId).sendStatus(201))
-							.catch(() =>{ 
-                console.log("error here");
-                res.sendStatus(422);})
+							.then(() => {
+								console.log("then is working??");
+								//res.json(questionId).sendStatus(201);
+								res.json(questionId).status(201).send();
+							})
+							.catch(() => {
+								//res.sendStatus(422);
+								console.log("error 422 spotted here...")
+							});
 					})
 					.catch(() => res.sendStatus(422));
 			} else {
@@ -46,6 +51,7 @@ QuestionRoutes.post("/questions", (req, res) => {
 QuestionRoutes.get("/questions/:id", (req, res) => {
 	const id = req.params.id;
 	getLoggedInUser(req.cookies.token).then((user) => {
+		
 		db.select(
 			"posts.*",
 			db.raw("users.email"),
@@ -75,7 +81,11 @@ QuestionRoutes.get("/questions/:id", (req, res) => {
 					});
 			})
 			.catch((e) => console.log(e) && res.status(422).send());
+	}).catch(e =>{
+		console.log("error spotted");
+		console.log(e);
 	});
+	
 });
 
 QuestionRoutes.get("/questions", (req, res) => {
@@ -128,7 +138,10 @@ QuestionRoutes.get("/questions", (req, res) => {
 			.then((questions) => {
 				res.json(questions).send();
 			})
-			.catch((e) => console.log("hmm..little bit mess here") && res.status(422).send());
+			.catch(
+				(e) =>
+					console.log("hmm..little bit mess here") && res.status(422).send()
+			);
 	}
 });
 

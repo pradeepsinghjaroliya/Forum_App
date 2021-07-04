@@ -13,7 +13,6 @@ const Container = styled.div`
 export default function AskPage() {
 
   const reactTags = React.createRef();
-  console.log(reactTags);
 
   const [questionTitle,setQuestionTitle] = useState('');
   const [questionBody, setQuestionBody] = useState('');
@@ -29,21 +28,22 @@ export default function AskPage() {
       tags: tags.map(tag => tag.id),
     }, {withCredentials:true})
       .then(response => {
-        console.log(response.data);
+        console.log(response.data[0]);
         setRedirect('/questions/'+response.data[0]);
+      }).catch(e =>{
+        console.log("error spotted in askpage");
+        console.log(e);
       });
   }
 
   function getTags() {
     axios.get('http://localhost:3030/tags')
       .then(response => {
-        console.log("gettags..");
         setTagSuggestions(response.data);
       })
   }
 
   function onTagAddition(tag) {
-    console.log("till here");
     const chosenTags = tags;
     chosenTags.push(tag);
     setTags(chosenTags);
@@ -61,7 +61,6 @@ export default function AskPage() {
 
   useEffect(() => {
     getTags();
-    console.log("useeffect running");
   }, []);
 
   return (
@@ -83,10 +82,11 @@ export default function AskPage() {
           ref={reactTags}
           tags={tags}
           suggestions={tagSuggestions}
-          handleDelete={ev => onTagDelete(ev)} 
-          handleAddition={ev => onTagAddition(ev)} />
+          onDelete={ev => onTagDelete(ev)} 
+          onAddition={ev => onTagAddition(ev)} />
         <button type={'submit'}>Post question</button>
       </form>
+      {/*handleDelete handleAddition */}
     </Container>
   );
 

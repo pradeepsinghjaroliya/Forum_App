@@ -63,7 +63,7 @@ class TagPage extends Component {
         <Helmet>
           <title>Forum - {match.params.name} questions</title>
         </Helmet>
-        <div classname="HeaderRow">
+        <div className="HeaderRow">
           <h1 className="header1">{match.params.name}</h1>
           {this.state.following && (
             <button onClick={() => this.unfollow()}>UNFollow</button>

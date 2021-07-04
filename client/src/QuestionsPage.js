@@ -18,7 +18,7 @@ function QuestionsPage() {
       <Helmet>
         <title>Forum - home</title>
       </Helmet>
-      <div classname="HeaderRow" >
+      <div className="HeaderRow" >
         <h1 className="header1" style={{margin:0}}>Questions</h1>
         <Link to={'/ask'}>Ask&nbsp;Question</Link>
       </div>

@@ -12,7 +12,7 @@ function QuestionRow({title,id,tags,author,createdAt}) {
       <div className="QuestionStat">2<span>answers</span></div>
       <div className="QuestionStat">3<span>views</span></div>
       <div className="QuestionTitleArea">
-        <Link to={'/questions/'+id} classname="QuestionLink">{title}</Link>
+        <Link to={'/questions/'+id} className="QuestionLink">{title}</Link>
         <div className="WhoAndWhen" >
           <When>{createdAt}</When> <UserLink id={author.id}>{author.name || author.email}</UserLink>
         </div>

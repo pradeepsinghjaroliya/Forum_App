@@ -31,12 +31,19 @@ function QuestionPage({match}) {
         setVoteCount(voteSum === null ? 0 : voteSum);
         setUserVote(response.data.question.user_vote);
         setTags(response.data.tags);
+      })
+      .catch(e =>{
+        console.log("error spotted...");
+        console.log(e);
       });
   }
   function getQuestionComments() {
     axios.get('http://localhost:3030/posts/comments/'+match.params.id, {withCredentials:true})
       .then(response => {
         setQuestionComments(response.data);
+      }).catch(e =>{
+        console.log("error spotted ...");
+        console.log(e);
       });
   }
   function getAnswersComments(answers) {
@@ -51,6 +58,9 @@ function QuestionPage({match}) {
       .then(response => {
         setAnswers(response.data);
         getAnswersComments(response.data);
+      }).catch(e =>{
+        console.log("error spotted...");
+        console.log(e);
       });
   }
   function postAnswer(ev) {
@@ -66,7 +76,7 @@ function QuestionPage({match}) {
     getQuestion();
     getAnswers();
     getQuestionComments();
-  }, []);
+  },[]);
   return (
     <>
       <div className="QuestionPage_container">
