@@ -135,11 +135,11 @@ function QuestionPage({match}) {
 
         <hr/>
         <h2 className="header2" style={{margin:'30px 0 20px'}}>Your Answer</h2>
-        <PostBodyTextarea
+        <PostBodyTextarea 
           value={answerBody}
           placeholder={'Your answer goes here. You can use markdown'}
           handlePostBodyChange={value => setAnswerBody(value)} />
-        <button onClick={ev => postAnswer(ev)}>Post your answer</button>
+        <button className="qnpagebtn" onClick={ev => postAnswer(ev)}>Post your answer</button>
       </div>
     </>
   );

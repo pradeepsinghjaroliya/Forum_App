@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBug } from "@fortawesome/free-solid-svg-icons";
+import { faCommentAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import UserContext from "./UserContext";
 import "./Header.css";
@@ -10,7 +10,7 @@ function Header() {
 	return (
 		<header className="header_container">
 			<Link to={"/"} className="LogoLink logo">
-				<FontAwesomeIcon icon={faBug} size="2x" />
+				<FontAwesomeIcon icon={faCommentAlt} size="2x" />
 				<span>Forum</span>
 			</Link>
 			{user && (

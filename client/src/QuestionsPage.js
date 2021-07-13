@@ -20,7 +20,7 @@ function QuestionsPage() {
       </Helmet>
       <div className="HeaderRow" >
         <h1 className="header1" style={{margin:0}}>Questions</h1>
-        <Link to={'/ask'}>Ask&nbsp;Question</Link>
+        <Link to={'/ask'} className="qplink">Ask&nbsp;Question</Link>
       </div>
       {questions && questions.length > 0 && questions.map(question => (
         <QuestionRow
@@ -30,7 +30,8 @@ function QuestionsPage() {
           createdAt={question.created_at}
           author={{id: question.user_id, name:question.name, email:question.email}}
           tags={question.tags} />
-      ))}
+      ))
+      }
     </main>
   );
 }

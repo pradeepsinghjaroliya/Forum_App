@@ -4,6 +4,7 @@ import axios from 'axios';
 import UserContext from "./UserContext";
 import {Redirect} from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import './RegisterPage.css';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -40,20 +41,20 @@ class RegisterPage extends Component {
       {this.state.redirectToTheHomePage && (
         <Redirect to={'/'} />
       )}
-      <div style={{padding:'30px 20px'}}>
+      <div className="Register_container" >
         <h1 className="header1" style={{marginBottom:'20px'}}>Register</h1>
         {this.state.error && (
           <div className="ErrorBox">{this.state.error}</div>
         )}
-        <form onSubmit={ev => this.register(ev)}>
-          <input className="input_box" placeholder={'email'} type="email" value={this.state.email}
+        <form className="registerforum" onSubmit={ev => this.register(ev)}>
+          <input className="input_box" id="register_input"placeholder={'email'} type="email" value={this.state.email}
                  onChange={ev => this.setState({email:ev.target.value})} />
-          <input className="input_box" placeholder={'your name'} type="text" value={this.state.name}
+          <input className="input_box" id="register_input" placeholder={'your name'} type="text" value={this.state.name}
                  onChange={ev => this.setState({name:ev.target.value})} />
-          <input className="input_box" placeholder={'password'} type="password" value={this.state.password}
+          <input className="input_box" id="register_input" placeholder={'password'} type="password" value={this.state.password}
                  autocomplete={'new-password'}
                  onChange={ev => this.setState({password:ev.target.value})} />
-          <button type={'submit'}>Register</button>
+          <button className="Registerbtn" type={'submit'}>Register</button>
         </form>
       </div>
     </>);

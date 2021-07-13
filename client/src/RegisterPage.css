@@ -1,4 +1,4 @@
-.Login_container{
+.Register_container{
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
@@ -6,10 +6,10 @@
     justify-content: center;
     margin-top: 100px;
 }
-#login_input{
+#register_input{
     width: 300px;
 }
-.Loginbtn{
+.Registerbtn{
     background-color: blue;
     height: 40px;
     border-radius: 5px;
@@ -17,10 +17,10 @@
     cursor: pointer;
     
 }
-.Loginbtn:hover{
+.Registerbtn:hover{
     color: white;
 }
-.loginforum{
+.registerforum{
     display: flex;
     flex-direction: column;
     justify-content: center;

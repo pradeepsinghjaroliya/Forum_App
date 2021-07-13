@@ -19,5 +19,28 @@
   display: grid;
   grid-template-columns: 1fr min-content;
   padding: 30px 20px;
-
+}
+.qplink{
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border-radius: 10px;
+}
+.qplink:hover{
+  color: black;
+}
+.askbtn{
+  background-color: blue;
+  height: 40px;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  color: white;
+}
+.askbtn:hover{
+  color: black;
 }

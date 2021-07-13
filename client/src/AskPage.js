@@ -84,7 +84,7 @@ export default function AskPage() {
           suggestions={tagSuggestions}
           onDelete={ev => onTagDelete(ev)} 
           onAddition={ev => onTagAddition(ev)} />
-        <button type={'submit'}>Post question</button>
+        <button className="askbtn" type={'submit'}>Post question</button>
       </form>
       {/*handleDelete handleAddition */}
     </Container>

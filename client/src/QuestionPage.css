@@ -14,4 +14,16 @@ border-bottom: 1px solid rgba(255,255,255,.1);
     grid-template-columns: 50px 1fr;
     column-gap: 20px;
     margin-bottom: 20px;
+    
+}
+.qnpagebtn{
+  background-color: blue;
+  height: 40px;
+  border-radius: 5px;
+  width: 120px;
+  cursor: pointer;
+  color: white;
+}
+.qnpagebtn:hover{
+  color: black;
 }

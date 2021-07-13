@@ -43,12 +43,12 @@ class LoginPage extends Component {
         {this.state.error && (
           <div className="ErrorBox" >Login failed</div>
         )}
-        <form onSubmit={ev => this.login(ev)}>
-          <input className="input_box" placeholder={'email'} type="email" value={this.state.email}
+        <form className="loginforum" onSubmit={ev => this.login(ev)}>
+          <input className="input_box" id="login_input" placeholder={'email'} type="email" value={this.state.email}
                  onChange={ev => this.setState({email:ev.target.value})} />
-          <input className="input_box" placeholder={'password'} type="password" value={this.state.password}
+          <input className="input_box" id="login_input" placeholder={'password'} type="password" value={this.state.password}
                  onChange={ev => this.setState({password:ev.target.value})} />
-          <button type={'submit'}>Login</button>
+          <button className="Loginbtn" type={'submit'}>Login</button>
         </form>
       </div>
     </>);
