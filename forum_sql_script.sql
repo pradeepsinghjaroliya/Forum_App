@@ -1,13 +1,10 @@
-# Forum_app
-Sql querries for creating database (edit the rest of the details like username and password in db.js)
-
 --create database forum_db;
-
 --use forum_db;
+--show tables;
 
 
-Now for adding the tables:-
 
+-- posts table 
 create TABLE posts(
     id int AUTO_INCREMENT,
     title text null,
@@ -19,17 +16,20 @@ create TABLE posts(
     PRIMARY KEY(id) 
 );
 
+-- question_tags table
 CREATE TABLE question_tags (
     question_id int null,
     tag_id int null
 );
 
+-- tags table
 CREATE TABLE tags (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255) null,
     PRIMARY KEY(id) 
 );
 
+--users table
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) null,
@@ -39,6 +39,7 @@ CREATE TABLE users (
     PRIMARY KEY(id) 
 );
 
+-- votes table
 CREATE TABLE votes (
     id int NOT NULL AUTO_INCREMENT,
 	vote int null,
@@ -47,12 +48,13 @@ CREATE TABLE votes (
     PRIMARY KEY(id) 
 );
 
+-- table user_tags
 CREATE table user_tags(
     user_id int null,
     tag_id int null
 );
 
-
-
-show tables;
---if it should show 6 tables(posts,question_tags,tags,users,votes,user_tags)
+INSERT INTO tags (name) VALUES ('java');
+INSERT INTO tags (name) VALUES ('sql');
+INSERT INTO tags (name) VALUES ('python');
+INSERT INTO tags (name) VALUES ('javascript');
